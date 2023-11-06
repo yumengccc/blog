@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yumeng Cao&#39;s Blog</title>
+  
+  <subtitle>Nia &amp; Rhys</subtitle>
+  <link href="/blog/atom.xml" rel="self"/>
+  
+  <link href="yumengccc.github.io/blog/"/>
+  <updated>2020-07-12T21:54:00.000Z</updated>
+  <id>yumengccc.github.io/blog/</id>
+  
+  <author>
+    <name>Yumeng Cao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="yumengccc.github.io/blog/2020/07/12/hello-world/"/>
+    <id>yumengccc.github.io/blog/2020/07/12/hello-world/</id>
+    <published>2020-07-12T21:54:00.000Z</published>
+    <updated>2020-07-12T21:54:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hello World</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Hello World&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
