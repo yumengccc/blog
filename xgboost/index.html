@@ -1,0 +1,652 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="analytics.js"></script><script src="jsapi" type="text/javascript"></script> 
+<script type="text/javascript">google.load("jquery", "1.3.2");</script><script type="text/javascript" charset="UTF-8" src="jquery.js"></script>
+<title>Mathedemo</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<style>
+    .left-align {
+        text-align: left;
+    }
+</style>
+<style type="text/css">
+	body {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+		font-weight:300;
+		font-size:18px;
+		margin-left: auto;
+		margin-right: auto;
+		width: 1100px;
+	}
+	
+	h1 {
+		font-weight:300;
+	}
+	
+	.disclaimerbox {
+		background-color: #eee;		
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+		padding: 20px;
+	}
+
+	video.header-vid {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	img.rounded {
+		border: 1px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+	
+	a:link,a:visited
+	{
+		color: #1367a7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #208799;
+	}
+	
+	td.dl-link {
+		height: 160px;
+		text-align: center;
+		font-size: 22px;
+	}
+	
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+	
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+ 
+  </head>
+
+  <body>
+    <br>
+          <center>
+          	<span style="font-size:42px">XGBoost Model and Its Application to Personal Credit Evaluation</span>
+	  		  <table width="1000px" align="center">
+	  			  <tbody><tr>
+	  	              <td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Hua Li</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Yumeng Cao</a></span>
+		  		  		</center>
+		  		  	  </td>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Jianbin Zhao</a></span>
+		  		  		</center>
+		  		  	  </td>
+					<td width="100px" align="center">
+	  					<center>
+	  						<span style="font-size:20px"> Yutong Sun</a></span>
+		  		  		</center>
+		  		  	  </td>
+			  </tr></tbody></table>
+          		<!-- <span style="font-size:30px">ECCV 2016.</span> -->
+
+	  		  <table width="650px" align="center">
+	  			  <tbody><tr>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:24px"><a href="https://ieeexplore.ieee.org/document/8988224"> [Paper]</a>
+		  		  		</span></center>
+		  		  	  </td>
+	  	              <td width="150px" align="center">
+	  					<center>
+	  						<span style="font-size:24px"><a href="XGBoost_Model_and_Its_Application_to_Personal_Credit_Evaluation.pdf"> [Paper Pdf]</a></span>
+		  		  		</center>
+		  		  	  </td>
+
+
+		  		  	 </tr>
+	  			  <tr>
+
+          </center>
+
+<!--   		  <br><br>
+		  <hr> -->
+
+  		  <br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/algorithm.png" height="250px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+
+
+					  
+  	                	<span style="font-size:14px"><i> Fig.1 Iteration process of Step 2.</i>
+					</span></center>
+  	              </td>
+
+  		  </tr></tbody></table>
+
+      	  <br>
+		  
+
+
+  		  <center><h1>Abstract</h1></center><table width="850px" align="center">
+	  		  
+	  		  <tbody><tr>
+	  		  	<td>
+<!-- 					Given a grayscale photograph as input, this paper attacks the problem of hallucinating a <i>plausible</i> color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and explore using class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward operation in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a "colorization Turing test", asking human subjects to choose between a generated and ground truth color image. Our method successfully fools humans 20% of the time, significantly higher than previous methods. -->
+	  		    </td>
+	  		  </tr>
+			</tbody></table>
+
+			This article investigates the application of the <b>eXtreme Gradient Boosting (XGB)</b> method to the 
+			credit evaluation problem based on big data. We first study the theoretical modeling of the credit 
+			classification problem using XGB algorithm, and then we apply the XGB model to the personal loan 
+			scenario based on the open data set from Lending Club Platform in USA. The empirical study shows 
+			that the XGB model has obvious advantages in both feature selection
+			 and classification performance compared to the logistic regression and the other three tree-based
+			  models.
+
+<!-- 					Given a grayscale photograph as input, this paper attacks the problem of hallucinating a <i>plausible</i> color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and explore using class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward operation in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a "colorization Turing test", asking human subjects to choose between a generated and ground truth color image. Our method successfully fools humans 20% of the time, significantly higher than previous methods. -->
+
+  		  <br><br>
+		  <hr>
+
+	  <!-- TRY THE DEMO -->
+
+
+
+
+        <!-- <center></center> -->
+
+
+
+
+<!-- <a href="http://www.eecs.berkeley.edu/~rich.zhang/projects/2016_colorization/files/demo_v0/colorization_release_v0.caffemodel">[Model 129MB]</span> -->
+
+      	  <br>
+		  <hr>
+
+  		  <!-- <table align=center width=550px> -->
+  		  <center><h1>Paper and Supplementary Material</h1></center><table width="825px" align="center">
+	 		
+  			  <tbody><tr>
+  	              <!--<td width=300px align=left>-->
+  	              <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
+				  <td><a href="XGBoost_Model_and_Its_Application_to_Personal_Credit_Evaluation.pdf"><img class="layered-paper-big" style="height:175px" src="Images/paper_thumb.png"></a></td>
+				  <td><span style="font-size:14pt">Hua Li; <b>Yumeng Cao</b>; Siwen Li; Jianbin Zhao; Yutong Sun.<br>
+					<b>XGBoost Model and Its
+						Application to Personal
+						Credit Evaluation.</b><br>
+				  In IEEE Intelligent Systems.
+				  (hosted  <a href="https://ieeexplore.ieee.org/document/8988224">here</a>)
+				  <!-- <td><span style="font-size:14pt">Zhang, Isola, Efros. Colorful Image Colorization. In ECCV, 2016. (hosted on arXiv) -->
+				  <span style="font-size:4pt"><a href="https://ieeexplore.ieee.org/document/8988224"><br></a>
+<!-- 				  <span style="font-size:14pt"><br><b>Primary revisions in v2</b>
+				  <span style="font-size:10pt"><br> &bull; ECCV 2016 Camera Ready
+				  <span style="font-size:10pt"><br> &bull; Self-supervision/representation learning experiments (see <b>Section 3.2</b>) -->
+				  <!-- <br> &bull; Loss function comparisons, with all models re-trained from scratch (see <b>Table 1</b>) -->
+				  </span>
+				  </span></td>
+  	              
+              </tr>
+  		  </tbody></table>
+		  <br>
+
+		  <!-- <br> -->
+<!--   		  <table align=center width=200px>
+			  <tr>
+				  <td><span style="font-size:11pt"><a href="http://arxiv.org/pdf/1603.08511v1.pdf">Previous version [v1] [10MB]</a></td>
+				  <td><span style="font-size:12pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
+			  </tr>
+			  <tr>
+				  <td><span style="font-size:11pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
+			  </tr>
+		  </table> -->
+
+		  <table width="600px" align="center">
+			  <tbody><tr>
+				  <td><span style="font-size:14pt"><center>
+				  	<a href='resources/xgboost.txt'>[Bibtex]</a>
+  	              </center></span></td>
+              </tr>
+  		  </tbody></table>
+
+	
+  	  	<hr>
+
+  		  <a name="perform_comp"></a>
+  		  <center><h1>Data and Performance Summaries</h1></center>
+  		
+		  <br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/table2.png" width = "400px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+  		  </tr></tbody></table>
+      	  <br>
+
+			<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/table3.png" width = "400px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+  		  </tr></tbody></table>
+      	  <br>
+
+			<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/table4.png" width = "400px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+  		  </tr></tbody></table>
+      	  <br>
+			<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/table5.png" width = "400px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+  		  </tr></tbody></table>
+      	  <br>
+			<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/table6.png" width = "400px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+  		  </tr></tbody></table>
+      	  <br>
+
+
+  		<br><br>  
+  	  	<hr>
+
+
+		<a name="vgg_res"></a>
+  	  	<center><h1> Algorithms<br>
+  	  		<!-- Categories for which colorization most helps/hurts recognition -->
+</center>
+
+In this section, we will present the algorithm of <b>XGB</b>.
+
+<ul>
+
+
+	<p class="left-align">Step 1: Initialization</p>
+
+		<p class="left-align">According to formula (10) and formula (11): $g_{i}=p_{i}-y_{i}, h_{i}=p_{i}\left(1-p_{i}\right)$.
+
+$\hat{y}_{i}^{(t-1)}$ is the predicted value of sample $x_{i}$ from the $(t-1)$ th tree and $y_{i}$ is the actual value of $x_{i}$. And the predicted value of the 0 th tree is equal to 0 , which means $\hat{y}_{i}^{(0)}=0$.
+</p>
+<br><br>
+<p class="left-align">Step 2: Determine the Splitting Mode</p>
+
+	<p class="left-align">For the determination of the current root node, the Gain value of all or part of the features needs to be first traversed and calculated, to find the feature node with the maximum Gain score as the current root node. The pseudocode of the iteration process is shown in Figure 1.
+	</p>
+		<br><br>
+<p class="left-align">Step 3: Establish the Current Binary Leaf Node Set</p>
+
+For the current root node, the sample set is divided into two parts according to the feature with maximum Gain found in the second step to obtain two leaf node sample sets. The second step above is repeated for the sets of two leaf nodes respectively until the Gain score is negative or meets other stopping conditions, and then the whole tree would be established.
+<br><br>
+<p class="left-align">Step 4: Calculate the Predicted Value of the Whole Leaf Node</p>
+
+	<p class="left-align">According to formula (13), the predicted value of leaf node $\omega_{j}$ can be calculated as $\omega_{j}=-\frac{G_{j}}{H_{j}+\lambda}$, and the prediction results of the second tree can be expressed as $\hat{y}_{i}^{(2)}=\hat{y}_{i}^{(1)}+f_{2}\left(x_{i}\right)$ according to formula (1) and (6).
+
+Then, the second tree has been established.</p>
+<br><br>
+<p class="left-align">Step 5: Establish More Trees</p>
+
+	<p class="left-align">Repeat Step 1 to Step 4 until enough number of trees have been established.
+
+According to formula (1), the prediction results of the model $\hat{y}_{i}^{(t)}$ can be expressed as $\hat{y}_{i}^{(t)}=\hat{y}_{i}^{(t-1)}+f_{t}\left(x_{i}\right)$, where $\hat{y}_{i}^{(t)}$ represents the prediction result of $t$ trees on sample $x_{i}$.
+
+Then, the $t$ th tree has been established.
+</p>
+<br><br>
+<p class="left-align">Step 6: Determine the Classification Result of Sample</p>
+
+	<p class="left-align">Using $p_{i}=\frac{1}{1+e^{-\hat{y}_{i}^{(t)}}}$ in formula (7) to convert the final predicted value $\hat{y}_{i}^{(t)}$ of the sample into probability. When $p_{i} \geq 0.5$, the classification of sample $x_{i}$ is 1 (means default), otherwise it is 0 (means no default).
+
+To make the predicted value much closer to the real value in each round, each tree is built based on the prediction result of the previous tree, so as to improve the prediction effect of the model.
+</p>
+</ul>
+
+<br><br>  
+		  <hr>
+
+
+		<a name="vgg_res"></a>
+  	  	<center><h1> XGB MODEL Details<br>
+  	  		<!-- Categories for which colorization most helps/hurts recognition -->
+  	  	<br>
+  		  <table width="850px" align="center">
+  			  <tbody><tr>
+  	              <td width="400px">
+  					<center>
+  	                	<img class="rounded" src="Images/table1.png" width = "1000px"></a><br>
+					</center>
+  	              </td>
+                </tr>
+  	              <tr><td width="400px">
+  					<center>
+  	              </td>
+
+  		  </tr></tbody></table>
+
+      	  <br>
+</center>
+
+<p class="left-align">
+
+<p> Table 1. Symbol and meaning.</p>
+<p>compared and analyzed, which show the optimal prediction ability of
+the XGB model in the context of binary personal loan credit
+evaluation.</p>
+<h1 class="unnumbered" id="xgb-model">XGB MODEL</h1>
+<p class="left-align">The basic idea of ensemble learning is to combine a series of weak
+learning models into a strong learning model to improve the performance
+of machine learning, which provides better prediction results than
+single models. This article mainly focuses on XGB, an ensemble algorithm
+of boosting for classification DT.</p>
+<h1 class="unnumbered" id="model-description">Model Description</h1>
+<p class="left-align">The symbols and their meanings are shown in Table 1.</p>
+<p class="left-align">Given a data set containing <span
+class="math inline"><em>n</em></span> samples and <span
+class="math inline"><em>m</em></span> features, where <span
+class="math inline"><em>D</em> = {(<em>x</em><sub><em>i</em></sub>,<em>y</em><sub><em>i</em></sub>)∣<em>x</em><sub><em>i</em></sub>∈<em>R</em><sup><em>m</em></sup>,<em>y</em><sub><em>i</em></sub>∈<em>R</em>}</span>
+and <span
+class="math inline"><em>x</em><sub><em>i</em></sub> = {<em>x</em><sub><em>i</em>1</sub>,<em>x</em><sub><em>i</em>2</sub>,…,<em>x</em><sub><em>i</em><em>m</em></sub>∣<em>i</em>=1,2,…,<em>n</em>}</span>.
+The chief task of the XGB model is to build <span
+class="math inline"><em>t</em></span> trees so that the predicted value
+<span
+class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup></span>
+up to the <span class="math inline"><em>t</em></span> th tree satisfies
+formula given as</p>
+<p class="left-align"><span class="math display">$$\begin{aligned}
+\hat{y}_{i}^{(0)} &amp; =0 \\
+\hat{y}_{i}^{(1)} &amp;
+=f_{1}\left(x_{i}\right)=\hat{y}_{i}^{(0)}+f_{1}\left(x_{i}\right) \\
+\hat{y}_{i}^{(2)} &amp;
+=f_{1}\left(x_{i}\right)+f_{2}\left(x_{i}\right)=\hat{y}_{i}^{(1)}+f_{2}\left(x_{i}\right)
+\\
+&amp; \ldots \\
+\hat{y}_{i}^{(t)} &amp; =\sum_{k=1}^{t}
+f_{k}\left(x_{i}\right)=\hat{y}_{i}^{(t-1)}+f_{t}\left(x_{i}\right) .
+\end{aligned}$$</span></p>
+<p class="left-align">In each iteration of the gradient boosting algorithm, a weak
+classifier <span
+class="math inline"><em>f</em><sub><em>k</em></sub>(<em>x</em><sub><em>i</em></sub>)</span>
+(i.e., a DT) is generated, and the predicted value <span
+class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup></span>
+of this iteration is the sum of the predicted value of the previous
+iteration <span
+class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>−1)</sup></span>
+and the DT result of this round <span
+class="math inline"><em>f</em><sub><em>t</em></sub>(<em>x</em><sub><em>i</em></sub>)</span>.</p>
+<p class="left-align">Therefore, there are three key problems that have to be solved to
+build the XGB model. 1) How to establish the DT in each round of
+iteration, or how do leaf nodes split? 2) How to determine the predicted
+value of leaf nodes on each DT? 3) How does each DT relate to the
+previous one? These three problems above are determined by the objective
+function as follows. The objective function <span
+class="math inline"><em>L</em><sup>(<em>t</em>)</sup></span> of this
+algorithm can be expressed as</p>
+<p class="left-align"><span class="math inline">$\min L^{(t)}\left(y,
+\hat{y}^{(t)}\right)=\min \left(\sum_{i=1}^{n} l\left(y_{i},
+\hat{y}_{i}^{(t)}\right)+\sum_{k=1}^{t}
+\Omega\left(f_{k}\right)\right)$</span></p>
+<p class="left-align">where <span
+class="math inline"><em>l</em>(<em>y</em><sub><em>i</em></sub>,<em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup>)</span>
+can be loss functions of different types according to actual problems,
+and is usually used to measure the degree of inconsistency between the
+real value <span
+class="math inline"><em>y</em><sub><em>i</em></sub></span> and the
+predicted value <span class="math inline">$\hat{y}_{i}^{(t)} \cdot
+\sum_{k=1}^{t} \Omega\left(f_{k}\right)$</span> is the regularization
+term (i.e., the penalty term) of the model, which is used to measure the
+complexity of the whole model, and it can be determined as follows:</p>
+<p class="left-align"><span class="math display">$$\Omega\left(f_{k}\right)=\gamma
+T_{k}+\frac{1}{2} \lambda \sum_{j=1}^{T_{k}} \omega_{k
+j}^{2}$$</span></p>
+<p class="left-align">where <span
+class="math inline"><em>T</em><sub><em>k</em></sub></span> is the number
+of leaf nodes in the <span class="math inline"><em>k</em></span> th
+tree, <span class="math inline"><em>γ</em></span> is the contraction
+coefficient of the number of leaf nodes <span
+class="math inline"><em>T</em>, <em>ω</em><sub><em>k</em><em>j</em></sub></span>
+is the score of the <span class="math inline"><em>j</em></span> th leaf
+node in the <span class="math inline"><em>k</em></span> th tree, <span
+class="math inline"><em>λ</em></span> is the penalty coefficient of the
+score of leaf node <span class="math inline"><em>ω</em></span>, and the
+value of <span
+class="math inline"><em>Ω</em>(<em>f</em><sub><em>k</em></sub>)</span>
+can be optimized through cross validation.</p>
+<p class="left-align">According to formula (1), substitute the predicted value <span
+class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup></span>
+of the <span class="math inline"><em>i</em></span> th sample in the
+<span class="math inline"><em>t</em></span> round iteration into the
+objective function of formula (2), and then using second-order
+approximation of Taylor expansion at <span
+class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>−1)</sup></span>,
+the following equation can be deduce as (referring to Chen’s derivation
+<span class="math inline"><sup>1</sup></span> ):</p>
+<p class="left-align"><span class="math inline">$\min L^{(t)}=\min
+\left(\sum_{i=1}^{n}\left[g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2}
+h_{i}
+f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)\right)$</span></p>
+<p class="left-align">where <span
+class="math inline"><em>g</em><sub><em>i</em></sub></span> and <span
+class="math inline"><em>h</em><sub><em>i</em></sub></span> are the first
+and second derivatives of the loss function <span
+class="math inline"><em>l</em>(<em>y</em><sub><em>i</em></sub>,<em>ŷ</em><sub><em>i</em></sub>)</span>,
+respectively.</p>
+<p class="left-align">Define <span
+class="math inline"><em>I</em><sub><em>j</em></sub> = {<em>i</em>∣<em>q</em>(<em>x</em><sub><em>i</em></sub>)=<em>j</em>}</span>
+as the collection of sample points on the <span
+class="math inline"><em>j</em></span> th leaf node in the DT, where the
+structure function <span
+class="math inline"><em>q</em>(<em>x</em>)</span> maps the sample point
+<span class="math inline"><em>x</em></span> to the position <span
+class="math inline"><em>j</em></span> of the leaf node and <span
+class="math inline"><em>ω</em></span> represents the score of the leaf
+node, so the result of the DT can be represented by <span
+class="math inline"><em>ω</em><sub><em>q</em>(<em>x</em>)</sub></span>.
+Consider that each DT <span
+class="math inline"><em>f</em>(<em>x</em>)</span> contains an
+independent tree structure <span
+class="math inline"><em>q</em>(<em>x</em>)</span> and the results <span
+class="math inline"><em>ω</em><sub><em>q</em>(<em>x</em>)</sub></span>
+of this tree, which can be denoted as follows:</p>
+<p class="left-align"><span
+class="math inline"><em>f</em>(<em>x</em>) = <em>ω</em><sub><em>q</em>(<em>x</em>)</sub>,  <em>ω</em> ∈ <em>R</em><sup><em>T</em></sup>,  <em>q</em> : <em>R</em><sup><em>d</em></sup> → {1, 2, …, <em>T</em>}</span>.</p>
+<p class="left-align">Substitute formula (5) into formula (4), the following equation can
+be derived:</p>
+<p class="left-align"><span class="math inline">$\min L^{(t)}=\min
+\left(\sum_{j=1}^{T_{t}}\left[G_{j} w_{t,
+j}+\frac{1}{2}\left(H_{j}+\lambda\right) \omega_{t, j}^{2}\right]+\gamma
+T_{t}\right)$</span></p>
+<p class="left-align">where <span
+class="math inline"><em>G</em><sub><em>j</em></sub> = ∑<sub><em>i</em> ∈ <em>I</em><sub><em>j</em></sub></sub><em>g</em><sub><em>i</em></sub></span>
+and <span
+class="math inline"><em>H</em><sub><em>j</em></sub> = ∑<sub><em>i</em> ∈ <em>I</em><sub><em>j</em></sub></sub><em>h</em><sub><em>i</em></sub></span>.</p>
+<p class="left-align">Since this article takes the binary classification problem as an
+example, and the value of the samples’ actual label <span
+class="math inline"><em>y</em><sub><em>i</em></sub></span> is 1 or 0 ,
+this article chooses the commonly used logloss function as loss
+function</p>
+<p class="left-align"><span class="math display">$$\begin{gathered}
+l\left(y_{i}, \hat{y}_{i}^{(t)}\right)=-\left(y_{i} \log
+\left(p_{i}\right)+\left(1-y_{i}\right) \log \left(1-p_{i}\right)\right)
+\\
+\text { where } p_{i}=\frac{1}{1+e^{-\hat{y}_{i}^{(t)}}} .
+\end{gathered}$$</span></p>
+<p class="left-align">The derivation of logloss function is as follows. Given a bunch of
+samples <span
+class="math inline">(<em>x</em><sub>1</sub>,<em>y</em><sub>1</sub>), …, (<em>x</em><sub><em>n</em></sub>,<em>y</em><sub><em>n</em></sub>)</span>,
+and the value of label column <span
+class="math inline"><em>y</em><sub><em>i</em></sub></span> is 0 or 1 in
+the binary classification problem. The probability of <span
+class="math inline"><em>n</em></span> samples <span
+class="math inline"><em>Y</em><sub><em>i</em></sub> = <em>y</em><sub><em>i</em></sub>(<em>i</em>=1,2,…,<em>n</em>)</span>
+can be obtained according to the probability formula of binomial
+distribution</p>
+<p class="left-align"><span class="math inline">$P\left\{Y_{I}=y_{1}, Y_{2}=y_{2}, \ldots,
+Y_{n}=y_{n}\right\}=\prod_{i=1}^{n}
+p_{i}^{y_{i}}\left(1-p_{i}\right)^{1-y_{i}}$</span>.</p>
+<p class="left-align">In order to maximize the probability <span
+class="math inline"><em>P</em></span> meeting this condition (maximum
+likelihood), we take the logarithm of formula (8)</p>
+<p><span class="math display">$$\ln P=\sum_{i=1}^{n} y_{i} \ln
+p_{i}+\sum_{i=1}^{n}\left(1-y_{i}\right) \ln
+\left(1-p_{i}\right)$$</span></p>
+<p class="left-align">In this case, we need to satisfy the maximum likelihood function
+<span class="math inline">ln <em>P</em></span> maximum. If we set the
+loss function as <span class="math inline"> − ln <em>P</em></span>, it
+can be equivalent to the minimum value of the loss function. Then, the
+loss function can be expressed as formula (7), and the value of <span
+class="math inline"><em>g</em><sub><em>i</em></sub></span> and <span
+class="math inline"><em>h</em><sub><em>i</em></sub></span> can be
+deduced as</p>
+<p><span class="math display">$$\begin{gathered}
+g_{i}=p_{i}-y_{i} \\
+h_{i}=p_{i}\left(1-p_{i}\right)
+\end{gathered}$$</span></p>
+<p class="left-align">Similarly, for multiclassification problems, we can choose the
+Softmax function as the loss function</p>
+<p class="left-align"><span class="math inline">$l(y, p)=-\sum_{m=1}^{M} y_{m} \log
+p_{m}$</span>, where <span
+class="math inline">$p_{m}=\frac{e^{\hat{y}_{i}^{(t)}}}{\sum_{m=1}^{M}
+e^{\hat{y}_{i}^{(t)}}}$</span></p>
+<p class="left-align">where <span class="math inline"><em>m</em></span> represents the
+category of labels and <span class="math inline"><em>M</em></span>
+represents a total of <span class="math inline"><em>M</em></span>
+categories. When <span class="math inline"><em>M</em> = 2</span>,
+formula (12) degenerates into formula (7).</p>
+</p>
+  		<br><br>  
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75863369-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+              
+
+
+ 
+</body></html>
