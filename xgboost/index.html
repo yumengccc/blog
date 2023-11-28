@@ -470,7 +470,7 @@ class="math inline"><em>t</em></span> trees so that the predicted value
 class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup></span>
 up to the <span class="math inline"><em>t</em></span> th tree satisfies
 formula given as</p>
-<p class="left-align"><span class="math display">$$\begin{aligned}
+<p class="left-align"><span class="math display">\\[ \begin{aligned}
 \hat{y}_{i}^{(0)} &amp; =0 \\
 \hat{y}_{i}^{(1)} &amp;
 =f_{1}\left(x_{i}\right)=\hat{y}_{i}^{(0)}+f_{1}\left(x_{i}\right) \\
@@ -480,7 +480,7 @@ formula given as</p>
 &amp; \ldots \\
 \hat{y}_{i}^{(t)} &amp; =\sum_{k=1}^{t}
 f_{k}\left(x_{i}\right)=\hat{y}_{i}^{(t-1)}+f_{t}\left(x_{i}\right) .
-\end{aligned}$$</span></p>
+\end{aligned} \\]</span></p>
 <p class="left-align">In each iteration of the gradient boosting algorithm, a weak
 classifier <span
 class="math inline"><em>f</em><sub><em>k</em></sub>(<em>x</em><sub><em>i</em></sub>)</span>
@@ -513,9 +513,9 @@ predicted value <span class="math inline">$\hat{y}_{i}^{(t)} \cdot
 \sum_{k=1}^{t} \Omega\left(f_{k}\right)$</span> is the regularization
 term (i.e., the penalty term) of the model, which is used to measure the
 complexity of the whole model, and it can be determined as follows:</p>
-<p class="left-align"><span class="math display">$$\Omega\left(f_{k}\right)=\gamma
+<p class="left-align"><span class="math display">\\[ \Omega\left(f_{k}\right)=\gamma
 T_{k}+\frac{1}{2} \lambda \sum_{j=1}^{T_{k}} \omega_{k
-j}^{2}$$</span></p>
+j}^{2} \\]</span></p>
 <p class="left-align">where <span
 class="math inline"><em>T</em><sub><em>k</em></sub></span> is the number
 of leaf nodes in the <span class="math inline"><em>k</em></span> th
@@ -582,12 +582,12 @@ example, and the value of the samples’ actual label <span
 class="math inline"><em>y</em><sub><em>i</em></sub></span> is 1 or 0 ,
 this article chooses the commonly used logloss function as loss
 function</p>
-<p class="left-align"><span class="math display">$$\begin{gathered}
+<p class="left-align"><span class="math display">\\[ \begin{gathered}
 l\left(y_{i}, \hat{y}_{i}^{(t)}\right)=-\left(y_{i} \log
 \left(p_{i}\right)+\left(1-y_{i}\right) \log \left(1-p_{i}\right)\right)
 \\
 \text { where } p_{i}=\frac{1}{1+e^{-\hat{y}_{i}^{(t)}}} .
-\end{gathered}$$</span></p>
+\end{gathered} \\]</span></p>
 <p class="left-align">The derivation of logloss function is as follows. Given a bunch of
 samples <span
 class="math inline">(<em>x</em><sub>1</sub>,<em>y</em><sub>1</sub>), …, (<em>x</em><sub><em>n</em></sub>,<em>y</em><sub><em>n</em></sub>)</span>,
@@ -604,9 +604,9 @@ p_{i}^{y_{i}}\left(1-p_{i}\right)^{1-y_{i}}$</span>.</p>
 <p class="left-align">In order to maximize the probability <span
 class="math inline"><em>P</em></span> meeting this condition (maximum
 likelihood), we take the logarithm of formula (8)</p>
-<p><span class="math display">$$\ln P=\sum_{i=1}^{n} y_{i} \ln
+<p><span class="math display">\\[ \ln P=\sum_{i=1}^{n} y_{i} \ln
 p_{i}+\sum_{i=1}^{n}\left(1-y_{i}\right) \ln
-\left(1-p_{i}\right)$$</span></p>
+\left(1-p_{i}\right) \\]</span></p>
 <p class="left-align">In this case, we need to satisfy the maximum likelihood function
 <span class="math inline">ln <em>P</em></span> maximum. If we set the
 loss function as <span class="math inline"> − ln <em>P</em></span>, it
@@ -615,10 +615,10 @@ loss function can be expressed as formula (7), and the value of <span
 class="math inline"><em>g</em><sub><em>i</em></sub></span> and <span
 class="math inline"><em>h</em><sub><em>i</em></sub></span> can be
 deduced as</p>
-<p><span class="math display">$$\begin{gathered}
+<p><span class="math display">\\[ \begin{gathered}
 g_{i}=p_{i}-y_{i} \\
 h_{i}=p_{i}\left(1-p_{i}\right)
-\end{gathered}$$</span></p>
+\end{gathered} \\]</span></p>
 <p class="left-align">Similarly, for multiclassification problems, we can choose the
 Softmax function as the loss function</p>
 <p class="left-align"><span class="math inline">$l(y, p)=-\sum_{m=1}^{M} y_{m} \log
