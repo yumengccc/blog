@@ -1,7 +1,6 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="analytics.js"></script><script src="jsapi" type="text/javascript"></script> 
 <script type="text/javascript">google.load("jquery", "1.3.2");</script><script type="text/javascript" charset="UTF-8" src="jquery.js"></script>
-<title>Mathedemo</title>
 <script>
 	MathJax = {
 	  startup: {
@@ -38,6 +37,8 @@
 	  });
 	});
 	</script>
+<title>Mathedemo</title>
+
 <script type="text/javascript"
   src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -503,7 +504,7 @@ class="math inline"><em>t</em></span> trees so that the predicted value
 class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup></span>
 up to the <span class="math inline"><em>t</em></span> th tree satisfies
 formula given as</p>
-<p class="left-align"><span class="math display">\\[ \begin{aligned}
+<p class="left-align"><span class="math display">$$\begin{aligned}
 \hat{y}_{i}^{(0)} &amp; =0 \\
 \hat{y}_{i}^{(1)} &amp;
 =f_{1}\left(x_{i}\right)=\hat{y}_{i}^{(0)}+f_{1}\left(x_{i}\right) \\
@@ -513,7 +514,7 @@ formula given as</p>
 &amp; \ldots \\
 \hat{y}_{i}^{(t)} &amp; =\sum_{k=1}^{t}
 f_{k}\left(x_{i}\right)=\hat{y}_{i}^{(t-1)}+f_{t}\left(x_{i}\right) .
-\end{aligned} \\]</span></p>
+\end{aligned}$$</span></p>
 <p class="left-align">In each iteration of the gradient boosting algorithm, a weak
 classifier <span
 class="math inline"><em>f</em><sub><em>k</em></sub>(<em>x</em><sub><em>i</em></sub>)</span>
@@ -532,23 +533,23 @@ previous one? These three problems above are determined by the objective
 function as follows. The objective function <span
 class="math inline"><em>L</em><sup>(<em>t</em>)</sup></span> of this
 algorithm can be expressed as</p>
-<p class="left-align"><span class="math inline">\\(\min L^{(t)}\left(y,
+<p class="left-align"><span class="math inline">$\min L^{(t)}\left(y,
 \hat{y}^{(t)}\right)=\min \left(\sum_{i=1}^{n} l\left(y_{i},
 \hat{y}_{i}^{(t)}\right)+\sum_{k=1}^{t}
-\Omega\left(f_{k}\right)\right)\\)</span></p>
+\Omega\left(f_{k}\right)\right)$</span></p>
 <p class="left-align">where <span
 class="math inline"><em>l</em>(<em>y</em><sub><em>i</em></sub>,<em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>)</sup>)</span>
 can be loss functions of different types according to actual problems,
 and is usually used to measure the degree of inconsistency between the
 real value <span
 class="math inline"><em>y</em><sub><em>i</em></sub></span> and the
-predicted value <span class="math inline">\\(\hat{y}_{i}^{(t)} \cdot
-\sum_{k=1}^{t} \Omega\left(f_{k}\right)\\)</span> is the regularization
+predicted value <span class="math inline">$\hat{y}_{i}^{(t)} \cdot
+\sum_{k=1}^{t} \Omega\left(f_{k}\right)$</span> is the regularization
 term (i.e., the penalty term) of the model, which is used to measure the
 complexity of the whole model, and it can be determined as follows:</p>
-<p class="left-align"><span class="math display">\\[ \Omega\left(f_{k}\right)=\gamma
+<p class="left-align"><span class="math display">$$\Omega\left(f_{k}\right)=\gamma
 T_{k}+\frac{1}{2} \lambda \sum_{j=1}^{T_{k}} \omega_{k
-j}^{2} \\]</span></p>
+j}^{2}$$</span></p>
 <p class="left-align">where <span
 class="math inline"><em>T</em><sub><em>k</em></sub></span> is the number
 of leaf nodes in the <span class="math inline"><em>k</em></span> th
@@ -571,10 +572,10 @@ approximation of Taylor expansion at <span
 class="math inline"><em>ŷ</em><sub><em>i</em></sub><sup>(<em>t</em>−1)</sup></span>,
 the following equation can be deduce as (referring to Chen’s derivation
 <span class="math inline"><sup>1</sup></span> ):</p>
-<p class="left-align"><span class="math inline">\\(\min L^{(t)}=\min
+<p class="left-align"><span class="math inline">$\min L^{(t)}=\min
 \left(\sum_{i=1}^{n}\left[g_{i} f_{t}\left(x_{i}\right)+\frac{1}{2}
 h_{i}
-f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)\right)\\)</span></p>
+f_{t}^{2}\left(x_{i}\right)\right]+\Omega\left(f_{t}\right)\right)$</span></p>
 <p class="left-align">where <span
 class="math inline"><em>g</em><sub><em>i</em></sub></span> and <span
 class="math inline"><em>h</em><sub><em>i</em></sub></span> are the first
@@ -602,10 +603,10 @@ of this tree, which can be denoted as follows:</p>
 class="math inline"><em>f</em>(<em>x</em>) = <em>ω</em><sub><em>q</em>(<em>x</em>)</sub>,  <em>ω</em> ∈ <em>R</em><sup><em>T</em></sup>,  <em>q</em> : <em>R</em><sup><em>d</em></sup> → {1, 2, …, <em>T</em>}</span>.</p>
 <p class="left-align">Substitute formula (5) into formula (4), the following equation can
 be derived:</p>
-<p class="left-align"><span class="math inline">\\(\min L^{(t)}=\min
+<p class="left-align"><span class="math inline">$\min L^{(t)}=\min
 \left(\sum_{j=1}^{T_{t}}\left[G_{j} w_{t,
 j}+\frac{1}{2}\left(H_{j}+\lambda\right) \omega_{t, j}^{2}\right]+\gamma
-T_{t}\right)\\)</span></p>
+T_{t}\right)$</span></p>
 <p class="left-align">where <span
 class="math inline"><em>G</em><sub><em>j</em></sub> = ∑<sub><em>i</em> ∈ <em>I</em><sub><em>j</em></sub></sub><em>g</em><sub><em>i</em></sub></span>
 and <span
@@ -615,12 +616,12 @@ example, and the value of the samples’ actual label <span
 class="math inline"><em>y</em><sub><em>i</em></sub></span> is 1 or 0 ,
 this article chooses the commonly used logloss function as loss
 function</p>
-<p class="left-align"><span class="math display">\\[ \begin{gathered}
+<p class="left-align"><span class="math display">$$\begin{gathered}
 l\left(y_{i}, \hat{y}_{i}^{(t)}\right)=-\left(y_{i} \log
 \left(p_{i}\right)+\left(1-y_{i}\right) \log \left(1-p_{i}\right)\right)
 \\
 \text { where } p_{i}=\frac{1}{1+e^{-\hat{y}_{i}^{(t)}}} .
-\end{gathered} \\]</span></p>
+\end{gathered}$$</span></p>
 <p class="left-align">The derivation of logloss function is as follows. Given a bunch of
 samples <span
 class="math inline">(<em>x</em><sub>1</sub>,<em>y</em><sub>1</sub>), …, (<em>x</em><sub><em>n</em></sub>,<em>y</em><sub><em>n</em></sub>)</span>,
@@ -631,15 +632,15 @@ class="math inline"><em>n</em></span> samples <span
 class="math inline"><em>Y</em><sub><em>i</em></sub> = <em>y</em><sub><em>i</em></sub>(<em>i</em>=1,2,…,<em>n</em>)</span>
 can be obtained according to the probability formula of binomial
 distribution</p>
-<p class="left-align"><span class="math inline">\\(P\left\{Y_{I}=y_{1}, Y_{2}=y_{2}, \ldots,
+<p class="left-align"><span class="math inline">$P\left\{Y_{I}=y_{1}, Y_{2}=y_{2}, \ldots,
 Y_{n}=y_{n}\right\}=\prod_{i=1}^{n}
-p_{i}^{y_{i}}\left(1-p_{i}\right)^{1-y_{i}}\\)</span>.</p>
+p_{i}^{y_{i}}\left(1-p_{i}\right)^{1-y_{i}}$</span>.</p>
 <p class="left-align">In order to maximize the probability <span
 class="math inline"><em>P</em></span> meeting this condition (maximum
 likelihood), we take the logarithm of formula (8)</p>
-<p><span class="math display">\\[ \ln P=\sum_{i=1}^{n} y_{i} \ln
+<p><span class="math display">$$\ln P=\sum_{i=1}^{n} y_{i} \ln
 p_{i}+\sum_{i=1}^{n}\left(1-y_{i}\right) \ln
-\left(1-p_{i}\right) \\]</span></p>
+\left(1-p_{i}\right)$$</span></p>
 <p class="left-align">In this case, we need to satisfy the maximum likelihood function
 <span class="math inline">ln <em>P</em></span> maximum. If we set the
 loss function as <span class="math inline"> − ln <em>P</em></span>, it
@@ -648,16 +649,16 @@ loss function can be expressed as formula (7), and the value of <span
 class="math inline"><em>g</em><sub><em>i</em></sub></span> and <span
 class="math inline"><em>h</em><sub><em>i</em></sub></span> can be
 deduced as</p>
-<p><span class="math display">\\[ \begin{gathered}
+<p><span class="math display">$$\begin{gathered}
 g_{i}=p_{i}-y_{i} \\
 h_{i}=p_{i}\left(1-p_{i}\right)
-\end{gathered} \\]</span></p>
+\end{gathered}$$</span></p>
 <p class="left-align">Similarly, for multiclassification problems, we can choose the
 Softmax function as the loss function</p>
-<p class="left-align"><span class="math inline">\\(l(y, p)=-\sum_{m=1}^{M} y_{m} \log
-p_{m}\\)</span>, where <span
-class="math inline">\\(p_{m}=\frac{e^{\hat{y}_{i}^{(t)}}}{\sum_{m=1}^{M}
-e^{\hat{y}_{i}^{(t)}}}\\)</span></p>
+<p class="left-align"><span class="math inline">$l(y, p)=-\sum_{m=1}^{M} y_{m} \log
+p_{m}$</span>, where <span
+class="math inline">$p_{m}=\frac{e^{\hat{y}_{i}^{(t)}}}{\sum_{m=1}^{M}
+e^{\hat{y}_{i}^{(t)}}}$</span></p>
 <p class="left-align">where <span class="math inline"><em>m</em></span> represents the
 category of labels and <span class="math inline"><em>M</em></span>
 represents a total of <span class="math inline"><em>M</em></span>
