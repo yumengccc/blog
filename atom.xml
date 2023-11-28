@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="yumengccc.github.io/blog/"/>
-  <updated>2023-11-14T05:34:49.286Z</updated>
+  <updated>2023-11-28T06:09:40.606Z</updated>
   <id>yumengccc.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Course Projects Summary in Biostatistics</title>
+    <link href="yumengccc.github.io/blog/2023/11/27/CourseProjectsSummary/"/>
+    <id>yumengccc.github.io/blog/2023/11/27/CourseProjectsSummary/</id>
+    <published>2023-11-28T02:00:00.000Z</published>
+    <updated>2023-11-28T06:09:40.606Z</updated>
+    
+    <content type="html"><![CDATA[<p>This page summarize some of my course projects at BU.</p><ul><li><p><a href="https://www.bu.edu/academics/sph/courses/sph-bs-859/" target="_blank" rel="noopener">SPH BS 859</a>:</p><ul><li>LD score regression</li><li>PRS analysis</li><li>Bi-directional Mendelian randomization</li></ul></li><li><p><a href="https://www.bu.edu/academics/sph/courses/sph-bs-852/" target="_blank" rel="noopener">SPH BS 852</a>:</p><ul><li>Kaplan-Meier curves and log-rank test</li><li>cox proportional hazards model</li><li>confounder examination</li></ul></li><li><p><a href="https://www.bu.edu/academics/sph/courses/sph-bs-831/" target="_blank" rel="noopener">SPH BS 831</a>:</p><ul><li>Pathway Enrichment Analysis</li><li>Testing for Normality of Gene Distributions</li><li>Testing for Sample Cluster Enrichment</li><li>Compare Clustering Results w/ and w/o Optimal Leaf Ordering</li><li>Random Forest Classification</li></ul></li><li><p><a href="https://www.bu.edu/academics/sph/courses/sph-bs-805/" target="_blank" rel="noopener">SPH BS 805</a>:</p><ul><li>Multiple linear regression model and Regression diagnostics</li><li>Model selection using LASSO with an AIC-based selection criterion</li></ul></li></ul><a id="more"></a><h1 id="Final-Report-for-SPH-BS-859"><a href="#Final-Report-for-SPH-BS-859" class="headerlink" title="Final Report for SPH BS 859"></a>Final Report for SPH BS 859</h1><ul><li>online pdf</li></ul><div class="row"><iframe src="https://drive.google.com/file/d/1RCo_57GZcMDfF-FvjvjdK3hu9i5oktCe/preview" style="width:100%; height:550px"></iframe></div><ul><li>pdf in github</li></ul><p>You may also find the <a href="https://github.com/yumengccc/BS859-Project-GWAS/blob/main/859Final%20Report.pdf" target="_blank" rel="noopener"><strong>PDF Version</strong></a> of this report from github.</p><h1 id="Final-Report-for-SPH-BS-852"><a href="#Final-Report-for-SPH-BS-852" class="headerlink" title="Final Report for SPH BS 852"></a>Final Report for SPH BS 852</h1><ul><li>online pdf</li></ul><div class="row"><iframe src="https://drive.google.com/file/d/1x6U18puetQORT9H3-_ABaL1lgarZPKkM/preview" style="width:100%; height:550px"></iframe></div><ul><li>pdf in github</li></ul><p>You may also find the <a href="https://github.com/yumengccc/BS852-Project-Survival-Analysis/blob/main/852Final%20Report.pdf" target="_blank" rel="noopener"><strong>PDF Version</strong></a> of this report from github.</p><h1 id="Final-Report-for-SPH-BS-805"><a href="#Final-Report-for-SPH-BS-805" class="headerlink" title="Final Report for SPH BS 805"></a>Final Report for SPH BS 805</h1><ul><li>online pdf</li></ul><div class="row"><iframe src="https://drive.google.com/file/d/1DwJLJ9Fty39JOkR65_PYHzg_2Goka20H/preview" style="width:100%; height:550px"></iframe></div><ul><li>pdf in github</li></ul><p>You may also find the <a href="https://github.com/yumengccc/BS805-Project-A-Cross-sectional-Study/blob/main/805Final%20Report.pdf" target="_blank" rel="noopener"><strong>PDF Version</strong></a> of this report from github.</p><h1 id="Codes"><a href="#Codes" class="headerlink" title="Codes"></a>Codes</h1><p><a href="https://github.com/yumengccc/BS859-Project-GWAS" target="_blank" rel="noopener">SPH BS 859</a><br><a href="https://github.com/yumengccc/BS852-Project-Survival-Analysis" target="_blank" rel="noopener">SPH BS 852</a><br><a href="https://github.com/yumengccc/BS831-Project-Genomics-Data" target="_blank" rel="noopener">SPH BS 831</a><br><a href="https://github.com/yumengccc/BS805-Project-A-Cross-sectional-Study" target="_blank" rel="noopener">SPH BS 805</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This page summarize some of my course projects at BU.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.bu.edu/academics/sph/courses/sph-bs-859/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SPH BS 859&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LD score regression&lt;/li&gt;
+&lt;li&gt;PRS analysis&lt;/li&gt;
+&lt;li&gt;Bi-directional Mendelian randomization&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.bu.edu/academics/sph/courses/sph-bs-852/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SPH BS 852&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Kaplan-Meier curves and log-rank test&lt;/li&gt;
+&lt;li&gt;cox proportional hazards model&lt;/li&gt;
+&lt;li&gt;confounder examination&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.bu.edu/academics/sph/courses/sph-bs-831/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SPH BS 831&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Pathway Enrichment Analysis&lt;/li&gt;
+&lt;li&gt;Testing for Normality of Gene Distributions&lt;/li&gt;
+&lt;li&gt;Testing for Sample Cluster Enrichment&lt;/li&gt;
+&lt;li&gt;Compare Clustering Results w/ and w/o Optimal Leaf Ordering&lt;/li&gt;
+&lt;li&gt;Random Forest Classification&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://www.bu.edu/academics/sph/courses/sph-bs-805/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SPH BS 805&lt;/a&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple linear regression model and Regression diagnostics&lt;/li&gt;
+&lt;li&gt;Model selection using LASSO with an AIC-based selection criterion&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="project" scheme="yumengccc.github.io/blog/categories/project/"/>
+    
+    
+      <category term="course project" scheme="yumengccc.github.io/blog/tags/course-project/"/>
+    
+      <category term="Biostatistics" scheme="yumengccc.github.io/blog/tags/Biostatistics/"/>
+    
+      <category term="cross sectional study" scheme="yumengccc.github.io/blog/tags/cross-sectional-study/"/>
+    
+      <category term="survival analysis" scheme="yumengccc.github.io/blog/tags/survival-analysis/"/>
+    
+      <category term="Genomics" scheme="yumengccc.github.io/blog/tags/Genomics/"/>
+    
+      <category term="GWAS" scheme="yumengccc.github.io/blog/tags/GWAS/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
